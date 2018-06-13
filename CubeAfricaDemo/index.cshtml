@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html ng-app="CubeAfricaDemo" ng-cloak>
+<head>
+    <title>Cube Africa Demo</title>
+	<meta charset="utf-8" />
+
+    @using System.Web.Optimization
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/scripts")
+</head>
+<body>
+    <div ui-view="mainFrame"></div>
+
+    <script src="Views/JS/application.js"></script>
+
+    <script src="Views/JS/Login/LoginController.js"></script>
+    <script src="Views/JS/Login/LoginService.js"></script>
+</body>
+</html>

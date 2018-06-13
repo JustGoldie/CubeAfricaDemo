@@ -1,0 +1,108 @@
+﻿<div class="col-sm-12" style="min-height:100vh;display:flex;align-items:center;">
+    <div class="col-sm-12">
+        <div class="col-sm-12" style="text-align:center">
+            <h1>CUBE AFRICA</h1>
+        </div>
+        <div ng-switch="view">
+            <div class="col-sm-2 offset-5" cg-busy="loginPromise" ng-switch-when="Login">
+                <form class="col-sm-12" style="text-align:center" name="loginForm">
+                    <div class="form-group">
+                        <input type="text" class="form-control" ng-model="loginDetails.email" placeholder="Email Address" required />
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" ng-model="loginDetails.password" placeholder="Password" required />
+                    </div>
+                    <button type="submit" class="col-sm-12 btn-dark" ng-click="Login(loginForm)">Log In</button>
+                    <a href="">Forgot Password?</a>
+                    <br />
+                    <a href="" ng-click="SwitchView('Register')">Register</a>
+                </form>
+            </div>
+            <div class="col-sm-4 offset-4" cg-busy="registerPromise" ng-switch-when="Register">
+                <div class="row">
+                    <form name="registerForm" class="col-sm-12">
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">First Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.firstName" name="firstName" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Last Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.lastName" name="lastName" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Email Address</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.email" name="email" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Company Name</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.company" name="company" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" ng-model="registrationDetails.password" name="password" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Confirm Password</label>
+                                <div class="col-sm-8">
+                                    <input type="password" class="form-control" ng-model="registrationDetails.passwordConfirm" name="passwordConfirm" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Cell Number</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.cellNo" name="cellNo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <label class="col-sm-4">Work Number</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" ng-model="registrationDetails.workNo" name="workNo" required />
+                                </div>
+                            </div>
+                        </div>
+                        <div style="text-align:center;">
+                            <button type="submit" class="col-sm-6 btn-dark" ng-click="Register(registerForm)">Register</button>
+                            <br />
+                            <a href="" ng-click="SwitchView('Login')">Return to Login Page</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-sm-12" style="text-align:center" ng-switch-when="LoggedIn">
+                <h3>Thank you for logging in! This will take you to the main page in future.</h3>
+                <br />
+                <a href="" ng-click="SwitchView('Login')">Return to Login Page</a>
+            </div>
+            <div class="col-sm-12" style="text-align:center" ng-switch-when="Registered">
+                <h3>Thank you for registering! This will send a confirmation email in future.</h3>
+                <br />
+                <a href="" ng-click="SwitchView('Login')">Return to Login Page</a>
+            </div>
+        </div>
+    </div>
+</div>
